@@ -1,9 +1,12 @@
 import {configureStore} from "@reduxjs/toolkit";
+import {keyboardPasswordSlice} from "../containers/DoorKeyboardPassword/keyboardPasswordSlice.ts";
 
 
  export const store = configureStore({
-    counter: {}
+    reducer: {
+        keyboardPassword: keyboardPasswordSlice.reducer,
+    }
 });
 
- export type RootState = ReturnType<typeof store.getStore>;
+ export type RootState = ReturnType<typeof store.getState>;
  export type AppDispatch = typeof store.dispatch;
