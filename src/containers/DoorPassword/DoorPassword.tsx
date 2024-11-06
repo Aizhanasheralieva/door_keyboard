@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import {appendSymbol} from "./doorPasswordSlice.ts";
+import {appendSymbol, removeSymbol} from "./doorPasswordSlice.ts";
 import {RootState} from "../../app/store.ts";
 
 
@@ -13,6 +13,7 @@ const DoorPassword = () => {
             {doorPasswordEnteredPassword}
             <hr/>
             <button onClick={() => dispatch(appendSymbol(4))}>Add symbol</button>
+            <button className="ms-3" onClick={() => dispatch((removeSymbol()))}>Remove symbol</button>
         </div>
     );
 };

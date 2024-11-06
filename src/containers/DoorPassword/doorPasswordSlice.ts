@@ -17,10 +17,13 @@ export const doorPasswordSlice = createSlice({
             if (state.enteredPassword.length < 4) {
                 state.enteredPassword += action.payload;
             }
+        },
+        removeSymbol: (state) => {
+            state.enteredPassword = state.enteredPassword.slice(0, -1);
         }
     },
 });
 
 export const doorPasswordReducer = doorPasswordSlice.reducer;
 
-export const {appendSymbol} = doorPasswordSlice.actions;
+export const {appendSymbol, removeSymbol} = doorPasswordSlice.actions;
