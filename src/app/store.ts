@@ -1,10 +1,10 @@
 import {configureStore} from "@reduxjs/toolkit";
-import {keyboardPasswordSlice} from "../containers/DoorKeyboardPassword/keyboardPasswordSlice.ts";
+import {doorPasswordReducer} from "../containers/DoorPassword/doorPasswordSlice.ts";
 
 
- export const store = configureStore({
+export const store = configureStore({
     reducer: {
-        keyboardPassword: keyboardPasswordSlice.reducer,
+        doorPassword: doorPasswordReducer,
     }
 });
 
