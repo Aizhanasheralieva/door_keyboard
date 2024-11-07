@@ -2,12 +2,11 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 interface doorPasswordState {
     enteredPassword: string;
-    passwordIsSuitable: boolean | null;
+    isSuitablePassword: boolean | null;
 }
-
 const initialState: doorPasswordState = {
     enteredPassword: '',
-    passwordIsSuitable: null,
+    isSuitablePassword: null,
 };
 export const doorPasswordSlice = createSlice({
     name: "doorPassword",
@@ -23,11 +22,14 @@ export const doorPasswordSlice = createSlice({
         },
         verifyDoorPassword: (state) => {
             const staticCorrectDoorPassword = '1503';
-            state.passwordIsSuitable = state.enteredPassword === staticCorrectDoorPassword;
+            state.isSuitablePassword = state.enteredPassword === staticCorrectDoorPassword;
         },
+        resetDoorPassword: (state) => {
+            state.enteredPassword = '';
+            state.isSuitablePassword = null;
+        }
     },
 });
 
 export const doorPasswordReducer = doorPasswordSlice.reducer;
-
-export const {appendSymbol, removeSymbol, verifyDoorPassword} = doorPasswordSlice.actions;
+export const {appendSymbol, removeSymbol, verifyDoorPassword, resetDoorPassword} = doorPasswordSlice.actions;
