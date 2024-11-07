@@ -22,7 +22,7 @@ const DoorPassword = () => {
     const writeSomeInputStyle = () => {
         if (isPasswordValid === null) return {};
         return {
-            border: isPasswordValid ? '1px solid green' : '2px solid red',
+            border: isPasswordValid ? '5px solid green' : '5px solid red',
         };
     };
 
@@ -37,7 +37,7 @@ const DoorPassword = () => {
     return (
         <div className="d-flex flex-column align-items-center justify-content-center">
             <div className="container-fluid d-flex align-items-center ">
-                <input className="p-5 fw-bold w-75 text-center" type="text" value={drawInputInformation()} disabled style={writeSomeInputStyle()} />
+                <input className="p-5 fw-bold bg-dark w-75 text-center" type="text" value={drawInputInformation()} disabled style={writeSomeInputStyle()} />
             </div>
             <hr/>
             <div className="row mb-3">
